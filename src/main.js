@@ -3,14 +3,12 @@
 // Use of this source code is governed by Apache
 // license that can be found in the LICENSE file.
 
-var UIPlugin = require('ui_container_plugin');
-var JST = require('.././jst');
-var Styler = require('./styler');
-var Mousetrap = require('mousetrap');
-var Settings = require('./settings');
-var $ = require('zepto');
+import { UIPlugin, Styler, $ } from 'clappr'
+//import JST from '.././jst'
+import Mousetrap from 'mousetrap'
+import Settings from './settings'
 
-class P2PHLSStats extends UIPlugin {
+export default class P2PHLSStats extends UIPlugin {
   get name() { return 'p2phlsstats' }
   get tagName() { return 'div' }
   get type() { return "ui" }
@@ -118,5 +116,3 @@ class P2PHLSStats extends UIPlugin {
     $.ajax({url: url})
   }
 }
-
-module.exports = window.P2PHLSStats = P2PHLSStats;
